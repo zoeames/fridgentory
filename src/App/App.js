@@ -1,9 +1,13 @@
 import React from 'react';
+import FancyCard from '../components/FancyCard/FancyCard';
+
+import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <button className="btn btn-danger"><i className="fad fa-alicorn fa-5x"></i></button>
+      <i className="fad fa-alicorn fa-5x unicorn"></i>
+      <FancyCard />
     </div>
   );
 }
