@@ -1,5 +1,5 @@
 import React from 'react';
-import FancyCard from '../components/FancyCard/FancyCard';
+import FoodCard from '../components/FoodCard/FoodCard';
 
 import './App.scss';
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <i className="fad fa-alicorn fa-5x unicorn"></i>
-      <FancyCard />
+      <FoodCard />
     </div>
   );
 }

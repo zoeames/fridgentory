@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './FancyCard.scss';
+import './FoodCard.scss';
 
-class FancyCard extends React.Component {
+class FoodCard extends React.Component {
   render() {
     const item = {
       name: 'Kale',
@@ -13,7 +13,7 @@ class FancyCard extends React.Component {
     };
 
     return (
-      <div className="FancyCard">
+      <div className="FoodCard">
         <div className="additional">
           <div className="user-card">
             <div className="level center">
@@ -25,7 +25,7 @@ class FancyCard extends React.Component {
             </div>
           </div>
           <div className="more-info">
-            <h1>{item.name}</h1>
+            <div className="food-name">{item.name}</div>
             <div className="coords">
               <span>Group Name</span>
               <span>Joined January 2019</span>
@@ -59,7 +59,7 @@ class FancyCard extends React.Component {
           </div>
         </div>
         <div className="general">
-          <h1>{item.name}</h1>
+          <div className="food-name">{item.name}</div>
           <p>{item.description}</p>
           <span className="more">Mouse over the card for more info</span>
         </div>
@@ -68,4 +68,4 @@ class FancyCard extends React.Component {
   }
 }
 
-export default FancyCard;
+export default FoodCard;

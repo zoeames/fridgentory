@@ -5,7 +5,7 @@
   -webkit-transform: translate(-50%, -50%);
 }
 
-.FancyCard {
+.FoodCard {
   width: 450px;
   height: 250px;
   background-color: #fff;
@@ -15,8 +15,10 @@
   overflow: hidden;
   position: relative;
   margin: 1.5rem;
-  h1 {
+  .food-name {
     text-align: center;
+    font-size: 30px;
+    font-weight: 700;
   }
   .additional {
     position: absolute;
@@ -78,7 +80,7 @@
       position: absolute;
       left: 150px;
       height: 100%;
-      h1 {
+      .food-name {
         color: #224C36;
         margin-bottom: 0;
       }
