@@ -4,64 +4,50 @@ import './FoodCard.scss';
 
 class FoodCard extends React.Component {
   render() {
-    const item = {
-      name: 'Kale',
-      description: 'Kale is a green, leafy, cruciferous vegetable that is rich in nutrients.',
-      imageUrl: 'https://www.thespruceeats.com/thmb/CgxMLQpJa3b5hMrSZAHhhqS9FuQ=/1500x1000/filters:fill(auto,1)/GettyImages-1136884993-e98853997496413d87092050e4ad7409.jpg',
-      type: 'Vegetable',
-      location: 'Fridge',
-    };
-
+    const { item } = this.props;
     return (
       <div className="FoodCard">
-        <div className="additional">
-          <div className="user-card">
-            <div className="level center">
-              {item.type}
+        <div className="under-card">
+          <div className="left-panel">
+            <div className="pill top">
+              {item.primaryLocation}
             </div>
             <div className="item-img center" style ={ { backgroundImage: `url("${item.imageUrl}")` } }></div>
-            <div className="points center">
-              {item.location}
+            <div className="pill bottom">
+              {item.secondaryLocation}
             </div>
           </div>
-          <div className="more-info">
+          <div className="info-container">
             <div className="food-name">{item.name}</div>
-            <div className="coords">
-              <span>Group Name</span>
-              <span>Joined January 2019</span>
-            </div>
-            <div className="coords">
-              <span>Position/Role</span>
-              <span>City, Country</span>
-            </div>
-            <div className="stats d-flex flex-wrap">
-              <div className="stat-child col-3">
-                <div className="title">Moon</div>
-                <i class="fad fa-space-station-moon"></i>
-                <div className="value">2</div>
+            <div className="notes">{item.notes}</div>
+            <div className="info d-flex flex-wrap">
+              <div className="col-6">
+                <div className="title">Category</div>
+                <i class={item.category.icon}></i>
+                <div className="value">{item.category.name}</div>
               </div>
-              <div className="stat-child col-3">
-                <div className="title">Cats</div>
-                <i class="fad fa-cat-space"></i>
-                <div className="value">27</div>
+              <div className="col-6">
+                <div className="title">Quantity</div>
+                <i class="far fa-balance-scale"></i>
+                <div className="value">{item.quantity}</div>
               </div>
-              <div className="stat-child col-3">
-                <div className="title">Pewpew</div>
-                <i class="fad fa-starfighter"></i>
-                <div className="value">123</div>
+              <div className="col-6">
+                <div className="title">Purchased</div>
+                <i class="fas fa-clock"></i>
+                <div className="value">{item.purchaseDate}</div>
               </div>
-              <div className="stat-child col-3">
-                <div className="title">Saturn</div>
-                <i class="fad fa-planet-ringed"></i>
-                <div className="value">123</div>
+              <div className="col-6">
+                <div className="title">Expires</div>
+                <i class="fas fa-alarm-clock"></i>
+                <div className="value">{item.expirationDate}</div>
               </div>
             </div>
           </div>
         </div>
-        <div className="general">
+        <div className="over-card">
           <div className="food-name">{item.name}</div>
           <p>{item.description}</p>
-          <span className="more">Mouse over the card for more info</span>
+          <span className="more">Hover for more...</span>
         </div>
       </div>
     );

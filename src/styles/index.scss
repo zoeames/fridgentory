@@ -1,6 +1,9 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-pro/css/all.min.css";
 
-body {
-  background-color: pink;
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
 }
