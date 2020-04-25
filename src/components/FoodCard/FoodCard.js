@@ -5,8 +5,10 @@ import './FoodCard.scss';
 class FoodCard extends React.Component {
   render() {
     const { item } = this.props;
+    // ios requires onClick to be added for clickable things
+
     return (
-      <div className="FoodCard">
+      <div className="FoodCard" onClick="">
         <div className="under-card">
           <div className="left-panel">
             <div className="pill top">
