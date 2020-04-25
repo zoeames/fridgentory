@@ -7,3 +7,21 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
 }
+
+.mobile {
+  display: block;
+}
+
+.desktop {
+  display: none;
+}
+
+@include media-breakpoint-up(md) {
+.mobile {
+  display: none;
+}
+
+.desktop {
+  display: block;
+}
+}

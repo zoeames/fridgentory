@@ -47,7 +47,8 @@ class FoodCard extends React.Component {
         <div className="over-card">
           <div className="food-name">{item.name}</div>
           <p>{item.description}</p>
-          <span className="more">Hover for more...</span>
+          <span className="more mobile">Click for more...</span>
+          <span className="more desktop">Hover for more...</span>
         </div>
       </div>
     );
