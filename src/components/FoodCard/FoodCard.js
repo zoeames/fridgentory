@@ -8,39 +8,39 @@ class FoodCard extends React.Component {
     // ios requires onClick to be added for clickable things
 
     return (
-      <div className="FoodCard" onClick="">
+      <div className="FoodCard" onClick={() => {}}>
         <div className="under-card">
           <div className="left-panel">
             <div className="pill top">
               {item.primaryLocation}
             </div>
-            <div className="item-img center" style ={ { backgroundImage: `url("${item.imageUrl}")` } }></div>
+            <div className="item-img" style ={ { backgroundImage: `url("${item.imageUrl}")` } }></div>
             <div className="pill bottom">
               {item.secondaryLocation}
             </div>
           </div>
           <div className="info-container">
             <div className="food-name">{item.name}</div>
-            <div className="notes">{item.notes}</div>
+            <div className="notes"><strong>Notes: </strong>{item.notes}</div>
             <div className="info d-flex flex-wrap">
-              <div className="col-6">
+              <div className="stat col-6">
                 <div className="title">Category</div>
-                <i class={item.category.icon}></i>
+                <i className={item.category.icon}></i>
                 <div className="value">{item.category.name}</div>
               </div>
-              <div className="col-6">
+              <div className="stat col-6">
                 <div className="title">Quantity</div>
-                <i class="far fa-balance-scale"></i>
+                <i className="far fa-balance-scale"></i>
                 <div className="value">{item.quantity}</div>
               </div>
-              <div className="col-6">
+              <div className="stat col-6">
                 <div className="title">Purchased</div>
-                <i class="fas fa-clock"></i>
+                <i className="fas fa-clock"></i>
                 <div className="value">{item.purchaseDate}</div>
               </div>
-              <div className="col-6">
+              <div className="stat col-6">
                 <div className="title">Expires</div>
-                <i class="fas fa-alarm-clock"></i>
+                <i className="fas fa-alarm-clock"></i>
                 <div className="value">{item.expirationDate}</div>
               </div>
             </div>

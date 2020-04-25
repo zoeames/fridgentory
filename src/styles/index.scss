@@ -1,13 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-pro/css/all.min.css";
 
-.center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-}
-
 .mobile {
   display: block;
 }
@@ -17,11 +10,11 @@
 }
 
 @include media-breakpoint-up(md) {
-.mobile {
-  display: none;
-}
+  .mobile {
+    display: none;
+  }
 
-.desktop {
-  display: block;
-}
+  .desktop {
+    display: block;
+  }
 }

@@ -16,7 +16,7 @@ const item1 = {
   expirationDate: '9/20/2020',
   purchaseDate: '9/20/2019',
   quantity: '3 bunches',
-  notes: 'nom nom nom',
+  notes: 'nom1 nom2 nom3 nom4 nom5',
 };
 
 const item2 = {

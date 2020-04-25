@@ -1,3 +1,4 @@
+@import "~bootstrap/scss/bootstrap";
 @import '../../styles/partials/colors';
 @import '../../styles/partials/variables';
 
@@ -29,6 +30,9 @@
       bottom: 15px;
       right: 15px;
       font-size: 14px;
+    }
+    .food-name {
+      margin-right: 15px;
     }
   }
   .under-card {
@@ -70,46 +74,66 @@
         background-position: center;
         border-radius: 100%;
         background-size: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     }
     .info-container{
       position: absolute;
       left: 150px;
-      width: calc(100% - 150px);
-      height: 100%;
+      width: calc(100% - 165px);
+      height: calc(100% - 30px);
       .food-name {
         color: $vegetable-dark1;
         margin-bottom: 0;
       }
       .notes {
+        font-size: 13px;
         font-style: italic;
+        height: 100px;
+        overflow: hidden;
       }
     }
     .info {
-      font-size: 32px;
+      font-size: 20px;
       color: $vegetable-dark2;
-      margin-top: 15px;
       i {
         display: block;
       }
-      .row {
-        padding-top: 10px;
-
+      .stat {
+        padding-top: 15px;
       }
       .title {
-        font-size: 14px;
+        font-size: 0.438em;
         font-weight: 900;
         text-transform: uppercase;
       }
       .value {
-        font-size: 16px;
+        font-size: 0.5em;
       }
     }
   }
   &:hover {
     .under-card {
       width: 100%;
-      // border-radius: 0 5px 5px 0;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .FoodCard {
+    .under-card {
+      .info-container {
+         .notes {
+           font-size: 16px;
+           height: 45px;
+         }
+      }
+      .info {
+        font-size: 32px;
+      }
     }
   }
 }
