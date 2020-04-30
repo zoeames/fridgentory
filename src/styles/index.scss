@@ -1,5 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-pro/css/all.min.css";
+@import "./partials/colors";
+
+body {
+  background-color: $champagnePink !important;
+}
+
 
 .mobile {
   display: block;

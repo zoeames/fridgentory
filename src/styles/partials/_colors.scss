@@ -4,8 +4,26 @@ $eggshell: #f8f8f8;
 $black-alpha15: rgba(0,0,0,0.15);
 $black: #000000;
 
-$vegetable-dark1: #224C36;
-$vegetable-dark2: #325C46;
+// Main colors
+$champagnePink: #EDD3C4;
+$pinkLavender: #C8ADC0;
+$slateBlue: #7765e3;
+$royalBlue: #3B60E4;
+$celadonGreen: #298684;
 
-$vegetable-light1: #92bCa6;
-$vegetable-light2: #A2CCB6;
+// CATEGORIES
+// $vegetable-light1: rgb(146,188,166);
+// // $vegetable-light2: darken($vegetable-light1, 10%);
+// // $vegetable-dark1: darken($vegetable-light1, 44%);
+// // $vegetable-dark2: darken($vegetable-light2, 44%);
+
+// // // different by +16 in rgb
+// $vegetable-dark1: #224C36; //rgb(34,76,54)
+// $vegetable-dark2: #325C46; //rgb(50,92,70)
+
+// // // dark to light difference -112 rbg
+// $vegetable-light1: #92bCa6; //rgb(146,188,166)
+// $vegetable-light2: #A2CCB6; //rgb(162,204,182)
+
+$vegetable1: #92bCa6; //rgb(146,188,166)
+$vegetable2: #A2CCB6; //rgb(162,204,182)

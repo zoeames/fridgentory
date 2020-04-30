@@ -39,7 +39,6 @@
     position: absolute;
     width: 150px;
     height: 100%;
-    background: linear-gradient($vegetable-light1, $vegetable-light2);
     overflow: hidden;
     z-index: 2;
     padding: 15px;
@@ -86,7 +85,6 @@
       width: calc(100% - 165px);
       height: calc(100% - 30px);
       .food-name {
-        color: $vegetable-dark1;
         margin-bottom: 0;
       }
       .notes {
@@ -98,7 +96,6 @@
     }
     .info {
       font-size: 20px;
-      color: $vegetable-dark2;
       i {
         display: block;
       }
@@ -118,6 +115,20 @@
   &:hover {
     .under-card {
       width: 100%;
+    }
+  }
+
+  &.vegetable {
+    .under-card {
+      background: linear-gradient($vegetable1, $vegetable2);
+      .info-container{
+        .food-name {
+          color: darken($vegetable1, 44%);
+        }
+      }
+      .info {
+        color: darken($vegetable2, 44%);
+      }
     }
   }
 }
