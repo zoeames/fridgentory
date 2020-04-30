@@ -1,0 +1,150 @@
+@import "~bootstrap/scss/bootstrap";
+@import '../../styles/partials/colors';
+@import '../../styles/partials/variables';
+
+.FoodCard {
+  height: 300px;
+  background-color: $white;
+  background: linear-gradient($eggshell, $white);
+  box-shadow: $food-card-box-shadow;
+  border-radius: 6px;
+  position: relative;
+  margin: 15px 0;
+  cursor: pointer;
+  .food-name {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .over-card {
+    width: calc(100% - 150px);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 15px;
+    .more {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      font-size: 14px;
+    }
+    .food-name {
+      margin-right: 15px;
+    }
+  }
+  .under-card {
+    position: absolute;
+    width: 150px;
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+    padding: 15px;
+    border-radius: 6px;
+    .left-panel {
+      width: 120px;
+      height: 100%;
+      position: relative;
+      float: left;
+      .pill {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $white;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: bold;
+        background: $black-alpha15;
+        padding: 5px 15px;
+        border-radius: 100px;
+        white-space: nowrap;
+        &.top {
+          top: 15%;
+        }
+        &.bottom {
+          top: 85%;
+        }
+      }
+      .item-img {
+        width: 120px;
+        height: 120px;
+        background-position: center;
+        border-radius: 100%;
+        background-size: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .info-container{
+      position: absolute;
+      left: 150px;
+      width: calc(100% - 165px);
+      height: calc(100% - 30px);
+      .food-name {
+        margin-bottom: 0;
+      }
+      .notes {
+        font-size: 13px;
+        font-style: italic;
+        height: 100px;
+        overflow: hidden;
+      }
+    }
+    .info {
+      font-size: 20px;
+      i {
+        display: block;
+      }
+      .stat {
+        padding-top: 15px;
+      }
+      .title {
+        font-size: 0.438em;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+      .value {
+        font-size: 0.5em;
+      }
+    }
+  }
+  &:hover {
+    .under-card {
+      width: 100%;
+    }
+  }
+
+  &.vegetable {
+    .under-card {
+      background: linear-gradient($vegetable1, $vegetable2);
+      .info-container{
+        .food-name {
+          color: darken($vegetable1, 44%);
+        }
+      }
+      .info {
+        color: darken($vegetable2, 44%);
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .FoodCard {
+    .under-card {
+      .info-container {
+         .notes {
+           font-size: 16px;
+           height: 45px;
+         }
+      }
+      .info {
+        font-size: 32px;
+      }
+    }
+  }
+}

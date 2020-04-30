@@ -1,6 +1,26 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-pro/css/all.min.css";
+@import "./partials/colors";
 
 body {
-  background-color: pink;
+  background-color: $champagnePink !important;
+}
+
+
+.mobile {
+  display: block;
+}
+
+.desktop {
+  display: none;
+}
+
+@include media-breakpoint-up(md) {
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
 }
