@@ -1,0 +1,86 @@
+{
+  "category1": {
+    "name": "Vegetables",
+    "icon": "fas fa-carrot",
+    "color1": "#92bCa6",
+    "color2": "#A2CCB6"
+  },
+  "category2": {
+    "name": "Fruits",
+    "icon": "fas fa-carrot",
+    "color1": "#92bCa6",
+    "color2": "#A2CCB6"
+  },
+  "category3": {
+    "name": "Meats",
+    "icon": "fas fa-carrot",
+    "color1": "#92bCa6",
+    "color2": "#A2CCB6"
+  },
+  "category4": {
+    "name": "Bakery",
+    "icon": "fas fa-carrot",
+    "color1": "#92bCa6",
+    "color2": "#A2CCB6"
+  },
+  "category5": {
+    "name": "Dairy",
+    "icon": "fas fa-carrot",
+    "color1": "#92bCa6",
+    "color2": "#A2CCB6"
+  },
+  "category6": {
+    "name": "Beer",
+    "icon": "fas fa-carrot",
+    "color1": "#92bCa6",
+    "color2": "#A2CCB6"
+  },
+  "category7": {
+    "name": "Wine",
+    "icon": "fas fa-carrot",
+    "color1": "#92bCa6",
+    "color2": "#A2CCB6"
+  },
+  "category8": {
+    "name": "Liquor",
+    "icon": "fas fa-carrot",
+    "color1": "#92bCa6",
+    "color2": "#A2CCB6"
+  },
+  "category9": {
+    "name": "Bakery",
+    "icon": "fas fa-carrot",
+    "color1": "#92bCa6",
+    "color2": "#A2CCB6"
+  },
+  "category10": {
+    "name": "Candy",
+    "icon": "fas fa-carrot",
+    "color1": "#92bCa6",
+    "color2": "#A2CCB6"
+  },
+  "category11": {
+    "name": "Spices",
+    "icon": "fas fa-carrot",
+    "color1": "#92bCa6",
+    "color2": "#A2CCB6"
+  },
+  "category12": {
+    "name": "Pantry",
+    "icon": "fas fa-carrot",
+    "color1": "#92bCa6",
+    "color2": "#A2CCB6"
+  },
+  "category13": {
+    "name": "Condiment",
+    "icon": "fas fa-carrot",
+    "color1": "#92bCa6",
+    "color2": "#A2CCB6"
+  },
+  "category14": {
+    "name": "Frozen",
+    "icon": "fas fa-carrot",
+    "color1": "#92bCa6",
+    "color2": "#A2CCB6"
+  }
+}
