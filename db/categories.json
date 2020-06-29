@@ -2,85 +2,76 @@
   "category1": {
     "name": "Vegetables",
     "icon": "fas fa-carrot",
-    "color1": "#92bCa6",
-    "color2": "#A2CCB6"
+    "color": "#DBFFD6"
   },
   "category2": {
     "name": "Fruits",
-    "icon": "fas fa-carrot",
-    "color1": "#92bCa6",
-    "color2": "#A2CCB6"
+    "icon": "fas fa-apple-alt",
+    "color": "#BFFCC6"
   },
   "category3": {
     "name": "Meats",
-    "icon": "fas fa-carrot",
-    "color1": "#92bCa6",
-    "color2": "#A2CCB6"
+    "icon": "fas fa-drumstick",
+    "color": "#FFABAB"
   },
   "category4": {
     "name": "Bakery",
-    "icon": "fas fa-carrot",
-    "color1": "#92bCa6",
-    "color2": "#A2CCB6"
+    "icon": "fas fa-croissant",
+    "color": "#D5AAFF"
   },
   "category5": {
     "name": "Dairy",
-    "icon": "fas fa-carrot",
-    "color1": "#92bCa6",
-    "color2": "#A2CCB6"
+    "icon": "far fa-cow",
+    "color": "#FFFFD1"
   },
   "category6": {
     "name": "Beer",
-    "icon": "fas fa-carrot",
-    "color1": "#92bCa6",
-    "color2": "#A2CCB6"
+    "icon": "fas fa-beer",
+    "color": "#FFF5BA"
   },
   "category7": {
     "name": "Wine",
-    "icon": "fas fa-carrot",
-    "color1": "#92bCa6",
-    "color2": "#A2CCB6"
+    "icon": "fas fa-wine-glass-alt",
+    "color": "#FFC9DE"
   },
   "category8": {
     "name": "Liquor",
-    "icon": "fas fa-carrot",
-    "color1": "#92bCa6",
-    "color2": "#A2CCB6"
+    "icon": "fas fa-cocktail",
+    "color": "#85E3FF"
   },
   "category9": {
-    "name": "Bakery",
-    "icon": "fas fa-carrot",
-    "color1": "#92bCa6",
-    "color2": "#A2CCB6"
+    "name": "Candy",
+    "icon": "fas fa-candy-cane",
+    "color": "#FBE4FF"
   },
   "category10": {
-    "name": "Candy",
-    "icon": "fas fa-carrot",
-    "color1": "#92bCa6",
-    "color2": "#A2CCB6"
+    "name": "Spices",
+    "icon": "fas fa-mortar-pestle",
+    "color": "#FF9CEE"
   },
   "category11": {
-    "name": "Spices",
-    "icon": "fas fa-carrot",
-    "color1": "#92bCa6",
-    "color2": "#A2CCB6"
+    "name": "Pantry",
+    "icon": "fas fa-sack",
+    "color": "#AFF8DB"
   },
   "category12": {
-    "name": "Pantry",
-    "icon": "fas fa-carrot",
-    "color1": "#92bCa6",
-    "color2": "#A2CCB6"
+    "name": "Condiments",
+    "icon": "fas fa-flask-potion",
+    "color": "#E7FFAC"
   },
   "category13": {
-    "name": "Condiment",
-    "icon": "fas fa-carrot",
-    "color1": "#92bCa6",
-    "color2": "#A2CCB6"
+    "name": "Frozen",
+    "icon": "fas fa-snowflake",
+    "color": "#6EB5FF"
   },
   "category14": {
-    "name": "Frozen",
-    "icon": "fas fa-carrot",
-    "color1": "#92bCa6",
-    "color2": "#A2CCB6"
+    "name": "Beverages",
+    "icon": "fas fa-glass-whiskey-rocks",
+    "color": "#C4FAF8"
+  },
+  "category15": {
+    "name": "Snacks",
+    "icon": "far fa-cookie",
+    "color": "#F6A6FF"
   }
 }

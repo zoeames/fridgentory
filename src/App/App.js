@@ -23,7 +23,7 @@ fbConnection();
 const PublicRoute = ({ component: Component, authenticated, ...rest }) => {
   const routeChecker = (props) => (authenticated === false
     ? (<Component {...props} />)
-    : (<Redirect to={{ pathname: '/home', state: { from: props.location } }} />));
+    : (<Redirect to={{ pathname: '/categories', state: { from: props.location } }} />));
   return <Route {...rest} render={(props) => routeChecker(props)} />;
 };
 

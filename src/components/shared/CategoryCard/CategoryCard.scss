@@ -1,0 +1,47 @@
+@import '../../../styles/partials/colors';
+@import '../../../styles/partials/variables';
+
+.CategoryCard {
+  height: 300px;
+  background-color: $slateBlue;
+  box-shadow: $food-card-box-shadow;
+  border-radius: 6px;
+  position: relative;
+  margin: 15px 0;
+  cursor: pointer;
+  .pill {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $white;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: $black-alpha15;
+    padding: 5px 15px;
+    border-radius: 100px;
+    white-space: nowrap;
+    &.top {
+      top: 15%;
+      font-size: 16px;
+    }
+    &.bottom {
+      top: 85%;
+      font-size: 12px;
+    }
+  }
+  .icon-holder {
+    width: 130px;
+    height: 130px;
+    background-position: center;
+    border-radius: 100%;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    i {
+      line-height: 130px;
+    }
+  }
+}
