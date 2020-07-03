@@ -1,4 +1,7 @@
 {
   "items": "items",
-  "categories": "categories"
+  "categories": "categories",
+  "primaryLocations": "primaryLocations",
+  "secondaryLocations": "secondaryLocations",
+  "units": "units"
 }

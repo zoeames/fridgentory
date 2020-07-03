@@ -7,12 +7,12 @@ class CategoryCard extends React.Component {
     const { category } = this.props;
     return (
       <div className="col-md-2">
-        <div className="CategoryCard vegetable">
+        <div className="CategoryCard">
           <div className="pill top">
             {category.name}
           </div>
-          <div className="icon-holder" style={{ borderColor: category.color }}>
-            <i className={`fa-5x ${category.icon}`} style={{ color: category.color }}></i>
+          <div className="icon-holder">
+            <i className={`fa-5x ${category.icon}`}></i>
           </div>
           <div className="pill bottom">
             {'1000 items'}

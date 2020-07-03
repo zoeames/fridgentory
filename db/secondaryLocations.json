@@ -1,0 +1,44 @@
+{
+  "secondaryLocation1": {
+    "name": "1st Shelf (top)"
+  },
+  "secondaryLocation2": {
+    "name": "2nd Shelf"
+  },
+  "secondaryLocation3": {
+    "name": "3rd Shelf"
+  },
+  "secondaryLocation4": {
+    "name": "4th Shelf"
+  },
+  "secondaryLocation5": {
+    "name": "5th Shelf"
+  },
+  "secondaryLocation6": {
+    "name": "6th Shelf"
+  },
+  "secondaryLocation7": {
+    "name": "7th Shelf"
+  },
+  "secondaryLocation8": {
+    "name": "8th Shelf"
+  },
+  "secondaryLocation9": {
+    "name": "9th Shelf"
+  },
+  "secondaryLocation10": {
+    "name": "1st Drawer (Top)"
+  },
+  "secondaryLocation11": {
+    "name": "2nd Drawer"
+  },
+  "secondaryLocation12": {
+    "name": "3rd Drawer"
+  },
+  "secondaryLocation13": {
+    "name": "4th Drawer"
+  },
+  "secondaryLocation14": {
+    "name": "Surface"
+  }
+}

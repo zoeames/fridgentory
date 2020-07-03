@@ -1,0 +1,41 @@
+{
+  "item1": {
+    "name": "Kale",
+    "description": "Kale is a green, leafy, cruciferous vegetable that is rich in nutrients.",
+    "imageUrl": "https://www.thespruceeats.com/thmb/CgxMLQpJa3b5hMrSZAHhhqS9FuQ=/1500x1000/filters:fill(auto,1)/GettyImages-1136884993-e98853997496413d87092050e4ad7409.jpg",
+    "categoryId": "category1",
+    "primaryLocationId": "primaryLocation1",
+    "secondaryLocationId": "secondaryLocation2",
+    "expirationDate": "9/20/2020",
+    "purchaseDate": "9/20/2019",
+    "quantity": 3,
+    "unitId": "unit2",
+    "notes": "nom1 nom2 nom3 nom4 nom5"
+  },
+  "item2": {
+    "name": "Cheese Its",
+    "description": "yummy",
+    "imageUrl": "https://www.kroger.com/product/images/xlarge/front/0002410044070",
+    "categoryId": "category15",
+    "primaryLocationId": "primaryLocation7",
+    "secondaryLocationId": "secondaryLocation14",
+    "expirationDate": "9/20/2022",
+    "purchaseDate": "7/03/2020",
+    "quantity": 6,
+    "unitId": "unit4",
+    "notes": "FAMILY SIZE"
+  },
+  "item3": {
+    "name": "All Purpose Flour",
+    "description": "",
+    "imageUrl": "https://d2d8wwwkmhfcva.cloudfront.net/800x/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_568943e2-f774-43cd-99a4-197dedd01a74.png",
+    "categoryId": "category11",
+    "primaryLocationId": "primaryLocation1",
+    "secondaryLocationId": "secondaryLocation3",
+    "expirationDate": "9/20/2020",
+    "purchaseDate": "9/20/2019",
+    "quantity": 2,
+    "unitId": "unit3",
+    "notes": "from Sprouts"
+  }
+}

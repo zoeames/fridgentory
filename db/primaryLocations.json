@@ -1,0 +1,26 @@
+{
+  "primaryLocation1": {
+    "name": "Fridge"
+  },
+  "primaryLocation2": {
+    "name": "Fridge Door"
+  },
+  "primaryLocation3": {
+    "name": "Pantry"
+  },
+  "primaryLocation4": {
+    "name": "Water Heater Closet"
+  },
+  "primaryLocation5": {
+    "name": "Spice Rack"
+  },
+  "primaryLocation6": {
+    "name": "SideBoard"
+  },
+  "primaryLocation7": {
+    "name": "Counter"
+  },
+  "primaryLocation8": {
+    "name": "Overflow Storage Closet"
+  }
+}

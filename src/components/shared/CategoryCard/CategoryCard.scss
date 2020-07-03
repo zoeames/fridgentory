@@ -8,7 +8,7 @@
   border-radius: 6px;
   position: relative;
   margin: 15px 0;
-  cursor: pointer;
+  // cursor: pointer;
   .pill {
     position: absolute;
     left: 50%;
@@ -39,7 +39,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 2px solid black;
+    color: rgb(119,102,226);
+    background: $black-alpha15;
     i {
       line-height: 130px;
     }
