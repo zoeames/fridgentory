@@ -1,0 +1,23 @@
+{
+  "unit1": {
+    "name": "item"
+  },
+  "unit2": {
+    "name": "bunch"
+  },
+  "unit3": {
+    "name": "bag"
+  },
+  "unit4": {
+    "name": "box"
+  },
+  "unit5": {
+    "name": "cup"
+  },
+  "unit6": {
+    "name": "pound"
+  },
+  "unit7": {
+    "name": "ounces"
+  }
+}
