@@ -43,6 +43,7 @@
     z-index: 2;
     padding: 15px;
     border-radius: 6px;
+    background: linear-gradient($royalBlue, $royalBlue2);
     .left-panel {
       width: 120px;
       height: 100%;
@@ -86,6 +87,7 @@
       height: calc(100% - 30px);
       .food-name {
         margin-bottom: 0;
+        color: darken($royalBlue, 44%);
       }
       .notes {
         font-size: 13px;
@@ -96,6 +98,7 @@
     }
     .info {
       font-size: 20px;
+      color: darken($royalBlue2, 44%);
       i {
         display: block;
       }
@@ -115,20 +118,6 @@
   &:hover {
     .under-card {
       width: 100%;
-    }
-  }
-
-  &.vegetable {
-    .under-card {
-      background: linear-gradient($vegetable1, $vegetable2);
-      .info-container{
-        .food-name {
-          color: darken($vegetable1, 44%);
-        }
-      }
-      .info {
-        color: darken($vegetable2, 44%);
-      }
     }
   }
 }
