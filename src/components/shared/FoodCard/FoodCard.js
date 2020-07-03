@@ -32,7 +32,7 @@ class FoodCard extends React.Component {
                 <div className="stat col-6">
                   <div className="title">Quantity</div>
                   <i className="far fa-balance-scale"></i>
-                  <div className="value">{item.quantity}</div>
+                  <div className="value">{item.quantity} {item.unit.name}</div>
                 </div>
                 <div className="stat col-6">
                   <div className="title">Purchased</div>

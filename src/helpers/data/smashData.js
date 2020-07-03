@@ -16,22 +16,25 @@
 
 import itemsData from './itemsData';
 import categoriesData from './categoriesData';
+import unitsData from './unitsData';
 
 const getCompleteItemList = () => new Promise((resolve, reject) => {
-  itemsData.getAllItems()
-    .then((items) => {
-      categoriesData.getAllCategories().then((categories) => {
+  itemsData.getAllItems().then((items) => {
+    categoriesData.getAllCategories().then((categories) => {
+      unitsData.getAllUnits().then((units) => {
         const finalItems = [];
-        debugger;
         items.forEach((item) => {
           const newItem = { ...item };
           const currentCategory = categories.find((x) => x.id === item.categoryId);
+          const currentUnit = units.find((x) => x.id === item.unitId);
           newItem.category = currentCategory;
+          newItem.unit = currentUnit;
           finalItems.push(newItem);
         });
         resolve(finalItems);
       });
-    })
+    });
+  })
     .catch((err) => reject(err));
 });
 
