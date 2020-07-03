@@ -17,21 +17,31 @@
 import itemsData from './itemsData';
 import categoriesData from './categoriesData';
 import unitsData from './unitsData';
+import primaryLocationsData from './primaryLocationsData';
+import secondaryLocationsData from './secondaryLocationsData';
 
 const getCompleteItemList = () => new Promise((resolve, reject) => {
   itemsData.getAllItems().then((items) => {
     categoriesData.getAllCategories().then((categories) => {
       unitsData.getAllUnits().then((units) => {
-        const finalItems = [];
-        items.forEach((item) => {
-          const newItem = { ...item };
-          const currentCategory = categories.find((x) => x.id === item.categoryId);
-          const currentUnit = units.find((x) => x.id === item.unitId);
-          newItem.category = currentCategory;
-          newItem.unit = currentUnit;
-          finalItems.push(newItem);
+        primaryLocationsData.getAllPrimaryLocations().then((primaryLocations) => {
+          secondaryLocationsData.getAllSecondaryLocations().then((secondaryLocations) => {
+            const finalItems = [];
+            items.forEach((item) => {
+              const newItem = { ...item };
+              const currentCategory = categories.find((x) => x.id === item.categoryId);
+              const currentUnit = units.find((x) => x.id === item.unitId);
+              const currentPrimaryLocation = primaryLocations.find((x) => x.id === item.primaryLocationId);
+              const currentSecondaryLocation = secondaryLocations.find((x) => x.id === item.secondaryLocationId);
+              newItem.category = currentCategory;
+              newItem.unit = currentUnit;
+              newItem.primaryLocation = currentPrimaryLocation.name;
+              newItem.secondaryLocation = currentSecondaryLocation.name;
+              finalItems.push(newItem);
+            });
+            resolve(finalItems);
+          });
         });
-        resolve(finalItems);
       });
     });
   })
