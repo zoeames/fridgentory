@@ -8,7 +8,7 @@ class FoodCard extends React.Component {
 
     // ios requires onClick to be added for clickable things
     return (
-      <div className="col-md-4" onClick={() => {}}>
+      <div className="col-lg-4 col-md-6" onClick={() => {}}>
         <div className="FoodCard">
           <div className="under-card">
             <div className="left-panel">

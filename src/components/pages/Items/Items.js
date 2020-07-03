@@ -22,7 +22,7 @@ class Items extends React.Component {
     const buildItemCards = items.map((item) => <FoodCard key={item.id} item={item}/>);
 
     return (
-      <div className="Items col-md-10 offset-md-1 text-center">
+      <div className="Items col-lg-10 offset-lg-1 text-center">
         <h1>Items</h1>
         <div className="d-flex flex-wrap">
           {buildItemCards}
