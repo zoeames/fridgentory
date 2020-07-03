@@ -34,7 +34,7 @@ const getCompleteItemList = () => new Promise((resolve, reject) => {
               const currentPrimaryLocation = primaryLocations.find((x) => x.id === item.primaryLocationId);
               const currentSecondaryLocation = secondaryLocations.find((x) => x.id === item.secondaryLocationId);
               newItem.category = currentCategory;
-              newItem.unit = currentUnit;
+              newItem.unit = currentUnit.name;
               newItem.primaryLocation = currentPrimaryLocation.name;
               newItem.secondaryLocation = currentSecondaryLocation.name;
               finalItems.push(newItem);
