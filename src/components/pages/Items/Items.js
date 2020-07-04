@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import FoodCard from '../../shared/FoodCard/FoodCard';
 
@@ -24,6 +25,7 @@ class Items extends React.Component {
     return (
       <div className="Items col-lg-10 offset-lg-1 text-center">
         <h1>Items</h1>
+        <Link className="btn btn-dark" to='/items/new'><i className="fas fa-plus"></i></Link>
         <div className="d-flex flex-wrap">
           {buildItemCards}
         </div>
