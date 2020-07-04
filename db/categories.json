@@ -1,77 +1,70 @@
 {
   "category1": {
     "name": "Vegetables",
-    "icon": "fas fa-carrot",
-    "color": "#DBFFD6"
+    "icon": "fas fa-carrot"
   },
   "category2": {
     "name": "Fruits",
-    "icon": "fas fa-apple-alt",
-    "color": "#BFFCC6"
+    "icon": "fas fa-apple-alt"
   },
   "category3": {
     "name": "Meats",
-    "icon": "fas fa-drumstick",
-    "color": "#FFABAB"
+    "icon": "fas fa-drumstick"
   },
   "category4": {
     "name": "Bakery",
-    "icon": "fas fa-croissant",
-    "color": "#D5AAFF"
+    "icon": "fas fa-croissant"
   },
   "category5": {
     "name": "Dairy",
-    "icon": "far fa-cow",
-    "color": "#FFFFD1"
+    "icon": "far fa-cow"
   },
   "category6": {
     "name": "Beer",
-    "icon": "fas fa-beer",
-    "color": "#FFF5BA"
+    "icon": "fas fa-beer"
   },
   "category7": {
     "name": "Wine",
-    "icon": "fas fa-wine-glass-alt",
-    "color": "#FFC9DE"
+    "icon": "fas fa-wine-glass-alt"
   },
   "category8": {
     "name": "Liquor",
-    "icon": "fas fa-cocktail",
-    "color": "#85E3FF"
+    "icon": "fas fa-cocktail"
   },
   "category9": {
     "name": "Candy",
-    "icon": "fas fa-candy-cane",
-    "color": "#FBE4FF"
+    "icon": "fas fa-candy-cane"
   },
   "category10": {
     "name": "Spices",
-    "icon": "fas fa-mortar-pestle",
-    "color": "#FF9CEE"
+    "icon": "fas fa-mortar-pestle"
   },
   "category11": {
     "name": "Pantry",
-    "icon": "fas fa-sack",
-    "color": "#AFF8DB"
+    "icon": "fas fa-sack"
   },
   "category12": {
     "name": "Condiments",
-    "icon": "fas fa-flask-potion",
-    "color": "#E7FFAC"
+    "icon": "fas fa-flask-potion"
   },
   "category13": {
     "name": "Frozen",
-    "icon": "fas fa-snowflake",
-    "color": "#6EB5FF"
+    "icon": "fas fa-snowflake"
   },
   "category14": {
     "name": "Beverages",
-    "icon": "fas fa-glass-whiskey-rocks",
-    "color": "#C4FAF8"
+    "icon": "fas fa-glass-whiskey-rocks"
   },
   "category15": {
     "name": "Snacks",
-    "icon": "far fa-cookie",
-    "color": "#F6A6FF"
+    "icon": "far fa-cookie"
+  },
+  "category16": {
+    "name": "Other",
+    "icon": "fas fa-starship"
+  },
+  "category17": {
+    "name": "Unknown",
+    "icon": "fas fa-ufo"
   }
 }

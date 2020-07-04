@@ -34,7 +34,7 @@ class Items extends React.Component {
     const buildItemCards = items.map((item) => <FoodCard key={item.id} item={item} deleteItem={this.deleteItem}/>);
 
     return (
-      <div className="Items col-lg-10 offset-lg-1 text-center">
+      <div className="Items col-12 text-center">
         <h1>Items</h1>
         <Link className="btn btn-dark" to='/items/new'><i className="fas fa-plus"></i></Link>
         <div className="d-flex flex-wrap">
