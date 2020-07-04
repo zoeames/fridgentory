@@ -10,14 +10,14 @@ import {
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-import './ItemForm.scss';
+import './EditItemForm.scss';
 import categoriesData from '../../../helpers/data/categoriesData';
 import unitsData from '../../../helpers/data/unitsData';
 import primaryLocationsData from '../../../helpers/data/primaryLocationsData';
 import secondaryLocationsData from '../../../helpers/data/secondaryLocationsData';
 import itemsData from '../../../helpers/data/itemsData';
 
-class ItemForm extends React.Component {
+class EditItemForm extends React.Component {
   state = {
     categories: [],
     primaryLocations: [],
@@ -41,37 +41,50 @@ class ItemForm extends React.Component {
   }
 
   componentDidMount() {
-    categoriesData.getAllCategories()
-      .then((categories) => {
-        const unknown = categories.find((x) => x.name === 'Unknown');
-        this.setState({ categories, itemCategory: unknown });
-      })
-      .catch((err) => console.error('unable to get categories: ', err));
+    const { itemId } = this.props.match.params;
+    itemsData.getSingle(itemId)
+      .then((resp) => {
+        const item = resp.data;
+        this.setState({
+          itemName: item.name,
+          itemDescription: item.description,
+          itemImageUrl: item.imageUrl,
+          itemExpirationDate: new Date(item.expirationDate),
+          itemPurchaseDate: new Date(item.purchaseDate),
+          itemQuantity: item.quantity,
+          itemNotes: item.notes,
+        });
 
-    unitsData.getAllUnits()
-      .then((units) => {
-        const unknown = units.find((x) => x.name === 'Unknown');
-        this.setState({ units, itemUnit: unknown });
-      })
-      .catch((err) => console.error('unable to get units: ', err));
+        categoriesData.getAllCategories()
+          .then((categories) => {
+            const selected = categories.find((x) => x.id === item.categoryId);
+            this.setState({ categories, itemCategory: selected });
+          });
 
-    primaryLocationsData.getAllPrimaryLocations()
-      .then((primaryLocations) => {
-        const unknown = primaryLocations.find((x) => x.name === 'Unknown');
-        this.setState({ primaryLocations, itemPrimaryLocation: unknown });
-      })
-      .catch((err) => console.error('unable to get primary locations: ', err));
+        unitsData.getAllUnits()
+          .then((units) => {
+            const selected = units.find((x) => x.id === item.unitId);
+            this.setState({ units, itemUnit: selected });
+          });
 
-    secondaryLocationsData.getAllSecondaryLocations()
-      .then((secondaryLocations) => {
-        const unknown = secondaryLocations.find((x) => x.name === 'Unknown');
-        this.setState({ secondaryLocations, itemSecondaryLocation: unknown });
+        primaryLocationsData.getAllPrimaryLocations()
+          .then((primaryLocations) => {
+            const selected = primaryLocations.find((x) => x.id === item.primaryLocationId);
+            this.setState({ primaryLocations, itemPrimaryLocation: selected });
+          });
+
+        secondaryLocationsData.getAllSecondaryLocations()
+          .then((secondaryLocations) => {
+            const selected = secondaryLocations.find((x) => x.id === item.secondaryLocationId);
+            this.setState({ secondaryLocations, itemSecondaryLocation: selected });
+          });
       })
-      .catch((err) => console.error('unable to get secondary locations: ', err));
+      .catch((err) => console.error('unable to get item to edit: ', err));
   }
 
   saveItem = (e) => {
     e.preventDefault();
+    const { itemId } = this.props.match.params;
     const {
       itemName,
       itemDescription,
@@ -98,7 +111,7 @@ class ItemForm extends React.Component {
       unitId: itemUnit.id,
       notes: itemNotes,
     };
-    itemsData.saveItem(newItem)
+    itemsData.updateItem(itemId, newItem)
       .then(() => this.props.history.push('/items'))
       .catch((err) => console.error('unable to save new item: ', err));
   }
@@ -173,8 +186,8 @@ class ItemForm extends React.Component {
     } = this.state;
 
     return (
-      <div className="ItemForm col-md-10 offset-md-1 text-center">
-        <h1>Create a new item</h1>
+      <div className="EditItemForm col-md-10 offset-md-1 text-center">
+        <h1> Edit Item: {itemName}</h1>
         <form>
           <div className="row">
             <div className="col-8">
@@ -316,4 +329,4 @@ class ItemForm extends React.Component {
   }
 }
 
-export default ItemForm;
+export default EditItemForm;

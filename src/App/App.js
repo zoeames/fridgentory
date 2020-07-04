@@ -15,7 +15,8 @@ import Auth from '../components/pages/Auth/Auth';
 import Home from '../components/pages/Home/Home';
 import Categories from '../components/pages/Categories/Categories';
 import Items from '../components/pages/Items/Items';
-import ItemForm from '../components/pages/ItemForm/ItemForm';
+import AddItemForm from '../components/pages/AddItemForm/AddItemForm';
+import EditItemForm from '../components/pages/EditItemForm/EditItemForm';
 
 import fbConnection from '../helpers/data/connection';
 
@@ -65,7 +66,8 @@ class App extends React.Component {
               <Switch>
                 <PrivateRoute path='/home' component={Home} authenticated={authenticated} />
                 <PrivateRoute path='/categories' component={Categories} authenticated={authenticated} />
-                <PrivateRoute path='/items/new' component={ItemForm} authenticated={authenticated} />
+                <PrivateRoute path='/items/new' component={AddItemForm} authenticated={authenticated} />
+                <PrivateRoute path='/items/:itemId/edit' component={EditItemForm} authenticated={authenticated} />
                 <PrivateRoute path='/items' component={Items} authenticated={authenticated} />
                 <PublicRoute path='/auth' component={Auth} authenticated={authenticated} />
                 <Redirect from="*" to="/home"/>
