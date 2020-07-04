@@ -42,19 +42,31 @@ class ItemForm extends React.Component {
 
   componentDidMount() {
     categoriesData.getAllCategories()
-      .then((categories) => this.setState({ categories, itemCategory: categories[0] }))
+      .then((categories) => {
+        const unknown = categories.find((x) => x.name === 'Unknown');
+        this.setState({ categories, itemCategory: unknown });
+      })
       .catch((err) => console.error('unable to get categories: ', err));
 
     unitsData.getAllUnits()
-      .then((units) => this.setState({ units, itemUnit: units[0] }))
+      .then((units) => {
+        const unknown = units.find((x) => x.name === 'Unknown');
+        this.setState({ units, itemUnit: unknown });
+      })
       .catch((err) => console.error('unable to get units: ', err));
 
     primaryLocationsData.getAllPrimaryLocations()
-      .then((primaryLocations) => this.setState({ primaryLocations, itemPrimaryLocation: primaryLocations[0] }))
+      .then((primaryLocations) => {
+        const unknown = primaryLocations.find((x) => x.name === 'Unknown');
+        this.setState({ primaryLocations, itemPrimaryLocation: unknown });
+      })
       .catch((err) => console.error('unable to get primary locations: ', err));
 
     secondaryLocationsData.getAllSecondaryLocations()
-      .then((secondaryLocations) => this.setState({ secondaryLocations, itemSecondaryLocation: secondaryLocations[0] }))
+      .then((secondaryLocations) => {
+        const unknown = secondaryLocations.find((x) => x.name === 'Unknown');
+        this.setState({ secondaryLocations, itemSecondaryLocation: unknown });
+      })
       .catch((err) => console.error('unable to get secondary locations: ', err));
   }
 
@@ -105,7 +117,7 @@ class ItemForm extends React.Component {
 
   itemImageUrlChange = (e) => { this.setState({ itemImageUrl: e.target.value }); }
 
-  itemQuantityChange = (e) => { this.setState({ itemQuantity: e.target.value }); }
+  itemQuantityChange = (e) => { this.setState({ itemQuantity: e.target.value.replace(/^0+/, '') }); }
 
   itemNotesChange = (e) => { this.setState({ itemNotes: e.target.value }); }
 
@@ -185,6 +197,7 @@ class ItemForm extends React.Component {
                 className="datepicker"
                 selected={itemPurchaseDate}
                 onChange={this.itemPurchaseDateChange}
+                maxDate={moment().toDate()}
               />
             </div>
             <div className="col-2">
@@ -194,6 +207,7 @@ class ItemForm extends React.Component {
                 className="datepicker"
                 selected={itemExpirationDate}
                 onChange={this.itemExpirationDateChange}
+                minDate={moment().toDate()}
               />
             </div>
           </div>
