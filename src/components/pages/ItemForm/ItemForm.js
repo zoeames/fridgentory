@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import {
   Dropdown,
   DropdownToggle,
@@ -6,11 +7,15 @@ import {
   DropdownItem,
 } from 'reactstrap';
 
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
 import './ItemForm.scss';
 import categoriesData from '../../../helpers/data/categoriesData';
 import unitsData from '../../../helpers/data/unitsData';
 import primaryLocationsData from '../../../helpers/data/primaryLocationsData';
 import secondaryLocationsData from '../../../helpers/data/secondaryLocationsData';
+import itemsData from '../../../helpers/data/itemsData';
 
 class ItemForm extends React.Component {
   state = {
@@ -29,8 +34,8 @@ class ItemForm extends React.Component {
     itemPrimaryLocation: {},
     itemSecondaryLocation: {},
     itemUnit: {},
-    itemExpirationDate: '',
-    itemPurchaseDate: '',
+    itemExpirationDate: new Date(),
+    itemPurchaseDate: new Date(),
     itemQuantity: 0,
     itemNotes: '',
   }
@@ -75,13 +80,15 @@ class ItemForm extends React.Component {
       categoryId: itemCategory.id,
       primaryLocationId: itemPrimaryLocation.id,
       secondaryLocationId: itemSecondaryLocation.id,
-      expirationDate: itemExpirationDate,
-      purchaseDate: itemPurchaseDate,
+      expirationDate: moment(itemExpirationDate).toISOString(),
+      purchaseDate: moment(itemPurchaseDate).toISOString(),
       quantity: itemQuantity,
       unitId: itemUnit.id,
       notes: itemNotes,
     };
-    console.log('newItem', newItem);
+    itemsData.saveItem(newItem)
+      .then(() => this.props.history.push('/items'))
+      .catch((err) => console.error('unable to save new item: ', err));
   }
 
   toggleCategoryDropdown = () => this.setState({ categoryDropdownOpen: !this.state.categoryDropdownOpen });
@@ -102,24 +109,32 @@ class ItemForm extends React.Component {
 
   itemNotesChange = (e) => { this.setState({ itemNotes: e.target.value }); }
 
-  itemCategoryChange= (e) => {
+  itemCategoryChange = (e) => {
     const selectedCategory = this.state.categories.find((x) => x.id === e.target.value);
     this.setState({ itemCategory: selectedCategory });
   }
 
-  itemPrimaryLocationChange= (e) => {
+  itemPrimaryLocationChange = (e) => {
     const selectedPrimaryLocation = this.state.primaryLocations.find((x) => x.id === e.target.value);
     this.setState({ itemPrimaryLocation: selectedPrimaryLocation });
   }
 
-  itemSecondaryLocationChange= (e) => {
+  itemSecondaryLocationChange = (e) => {
     const selectedSecondaryLocation = this.state.secondaryLocations.find((x) => x.id === e.target.value);
     this.setState({ itemSecondaryLocation: selectedSecondaryLocation });
   }
 
-  itemUnitChange= (e) => {
+  itemUnitChange = (e) => {
     const selectedUnit = this.state.units.find((x) => x.id === e.target.value);
     this.setState({ itemUnit: selectedUnit });
+  }
+
+  itemPurchaseDateChange = (date) => {
+    this.setState({ itemPurchaseDate: date });
+  }
+
+  itemExpirationDateChange = (date) => {
+    this.setState({ itemExpirationDate: date });
   }
 
   render() {
@@ -149,16 +164,38 @@ class ItemForm extends React.Component {
       <div className="ItemForm col-md-10 offset-md-1 text-center">
         <h1>Create a new item</h1>
         <form>
-          <div className="form-group">
-            <label htmlFor="itemName">Name</label>
-            <input
-              type="text"
-              className="form-control"
-              id="itemName"
-              placeholder="Kale"
-              value={itemName}
-              onChange={this.itemNameChange}
-            />
+          <div className="row">
+            <div className="col-8">
+              <div className="form-group">
+                <label htmlFor="itemName">Name</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="itemName"
+                  placeholder="Kale"
+                  value={itemName}
+                  onChange={this.itemNameChange}
+                />
+              </div>
+            </div>
+            <div className="col-2">
+              <label htmlFor="itemPurchaseDate">Purchase Date</label>
+              <DatePicker
+                id="itemPurchaseDate"
+                className="datepicker"
+                selected={itemPurchaseDate}
+                onChange={this.itemPurchaseDateChange}
+              />
+            </div>
+            <div className="col-2">
+              <label htmlFor="itemExpirationDate">Expiration Date</label>
+              <DatePicker
+                id="itemExpirationDate"
+                className="datepicker"
+                selected={itemExpirationDate}
+                onChange={this.itemExpirationDateChange}
+              />
+            </div>
           </div>
           <div className="row">
             <div className="col-8">
@@ -168,7 +205,7 @@ class ItemForm extends React.Component {
                   type="number"
                   className="form-control"
                   id="itemQuantity"
-                  placeholder="Kale"
+                  placeholder="4"
                   value={itemQuantity}
                   onChange={this.itemQuantityChange}
                 />
@@ -224,10 +261,6 @@ class ItemForm extends React.Component {
                 </DropdownMenu>
               </Dropdown>
             </div>
-          </div>
-          <div className="row">
-            <div className="col-6"></div>
-            <div className="col-6"></div>
           </div>
           <div className="form-group">
             <label htmlFor="itemImageUrl">Image Url</label>

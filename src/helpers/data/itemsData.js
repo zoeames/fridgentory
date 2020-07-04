@@ -20,6 +20,9 @@ const getAllItems = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const saveItem = (newItem) => axios.post(`${baseUrl}/items.json`, newItem);
+
 export default {
   getAllItems,
+  saveItem,
 };
