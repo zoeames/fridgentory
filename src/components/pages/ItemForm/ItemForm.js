@@ -160,16 +160,74 @@ class ItemForm extends React.Component {
               onChange={this.itemNameChange}
             />
           </div>
-          <div className="form-group">
-            <label htmlFor="itemDescription">Description</label>
-            <input
-              type="text"
-              className="form-control"
-              id="itemDescription"
-              placeholder="Kale is green."
-              value={itemDescription}
-              onChange={this.itemDescriptionChange}
-            />
+          <div className="row">
+            <div className="col-8">
+              <div className="form-group">
+                <label htmlFor="itemQuantity">Quantity</label>
+                <input
+                  type="number"
+                  className="form-control"
+                  id="itemQuantity"
+                  placeholder="Kale"
+                  value={itemQuantity}
+                  onChange={this.itemQuantityChange}
+                />
+              </div>
+            </div>
+            <div className="col-4">
+              <label htmlFor="itemUnit">Quantity Unit</label>
+              <Dropdown id="itemUnit" isOpen={unitDropdownOpen} toggle={this.toggleUnitDropdown}>
+                <DropdownToggle caret>
+                  {itemUnit.name}
+                  </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem header>Select a Category</DropdownItem>
+                  {units.map((unit) => <DropdownItem onClick={this.itemUnitChange} key={unit.id} value={unit.id}>{unit.name}</DropdownItem>)}
+                </DropdownMenu>
+              </Dropdown>
+            </div>
+          </div>
+          <div className="row">
+            <div className='col-4'>
+              <label htmlFor="itemCategory">Category</label>
+              <Dropdown id="itemCategory" isOpen={categoryDropdownOpen} toggle={this.toggleCategoryDropdown}>
+                <DropdownToggle caret>
+                  {itemCategory.name}
+                  </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem header>Select a Category</DropdownItem>
+                  {categories.map((category) => <DropdownItem onClick={this.itemCategoryChange} key={category.id} value={category.id}>{category.name}</DropdownItem>)}
+                </DropdownMenu>
+              </Dropdown>
+            </div>
+            <div className='col-4'>
+              <label htmlFor="itemPrimaryLocation">Primary Location</label>
+              <Dropdown id="itemPrimaryLocation" isOpen={primaryLocationDropdownOpen} toggle={this.togglePrimaryLocationDropdown}>
+                <DropdownToggle caret>
+                  {itemPrimaryLocation.name}
+                  </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem header>Select a Category</DropdownItem>
+                  {primaryLocations.map((primary) => <DropdownItem onClick={this.itemPrimaryLocationChange} key={primary.id} value={primary.id}>{primary.name}</DropdownItem>)}
+                </DropdownMenu>
+              </Dropdown>
+            </div>
+            <div className='col-4'>
+              <label htmlFor="itemSecondaryLocation">Secondary Location</label>
+              <Dropdown id="itemSecondaryLocation" isOpen={secondaryLocationDropdownOpen} toggle={this.toggleSecondaryLocationDropdown}>
+                <DropdownToggle caret>
+                  {itemSecondaryLocation.name}
+                  </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem header>Select a Category</DropdownItem>
+                  {secondaryLocations.map((secondary) => <DropdownItem onClick={this.itemSecondaryLocationChange} key={secondary.id} value={secondary.id}>{secondary.name}</DropdownItem>)}
+                </DropdownMenu>
+              </Dropdown>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-6"></div>
+            <div className="col-6"></div>
           </div>
           <div className="form-group">
             <label htmlFor="itemImageUrl">Image Url</label>
@@ -183,14 +241,14 @@ class ItemForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="itemQuantity">Quantity</label>
+            <label htmlFor="itemDescription">Description</label>
             <input
-              type="number"
+              type="text"
               className="form-control"
-              id="itemQuantity"
-              placeholder="Kale"
-              value={itemQuantity}
-              onChange={this.itemQuantityChange}
+              id="itemDescription"
+              placeholder="Kale is green."
+              value={itemDescription}
+              onChange={this.itemDescriptionChange}
             />
           </div>
           <div className="form-group">
@@ -203,56 +261,6 @@ class ItemForm extends React.Component {
               value={itemNotes}
               onChange={this.itemNotesChange}
             />
-          </div>
-          <div className="row">
-            <div className='col-3'>
-              <label htmlFor="itemCategory">Category</label>
-              <Dropdown id="itemCategory" isOpen={categoryDropdownOpen} toggle={this.toggleCategoryDropdown}>
-                <DropdownToggle caret>
-                  {itemCategory.name}
-                  </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem header>Select a Category</DropdownItem>
-                  {categories.map((category) => <DropdownItem onClick={this.itemCategoryChange} key={category.id} value={category.id}>{category.name}</DropdownItem>)}
-                </DropdownMenu>
-              </Dropdown>
-            </div>
-            <div className='col-3'>
-              <label htmlFor="itemPrimaryLocation">Primary Location</label>
-              <Dropdown id="itemPrimaryLocation" isOpen={primaryLocationDropdownOpen} toggle={this.togglePrimaryLocationDropdown}>
-                <DropdownToggle caret>
-                  {itemPrimaryLocation.name}
-                  </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem header>Select a Category</DropdownItem>
-                  {primaryLocations.map((primary) => <DropdownItem onClick={this.itemPrimaryLocationChange} key={primary.id} value={primary.id}>{primary.name}</DropdownItem>)}
-                </DropdownMenu>
-              </Dropdown>
-            </div>
-            <div className='col-3'>
-              <label htmlFor="itemSecondaryLocation">Secondary Location</label>
-              <Dropdown id="itemSecondaryLocation" isOpen={secondaryLocationDropdownOpen} toggle={this.toggleSecondaryLocationDropdown}>
-                <DropdownToggle caret>
-                  {itemSecondaryLocation.name}
-                  </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem header>Select a Category</DropdownItem>
-                  {secondaryLocations.map((secondary) => <DropdownItem onClick={this.itemSecondaryLocationChange} key={secondary.id} value={secondary.id}>{secondary.name}</DropdownItem>)}
-                </DropdownMenu>
-              </Dropdown>
-            </div>
-            <div className='col-3'>
-              <label htmlFor="itemUnit">Quantity Unit</label>
-              <Dropdown id="itemUnit" isOpen={unitDropdownOpen} toggle={this.toggleUnitDropdown}>
-                <DropdownToggle caret>
-                  {itemUnit.name}
-                  </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem header>Select a Category</DropdownItem>
-                  {units.map((unit) => <DropdownItem onClick={this.itemUnitChange} key={unit.id} value={unit.id}>{unit.name}</DropdownItem>)}
-                </DropdownMenu>
-              </Dropdown>
-            </div>
           </div>
           <button type="submit" className="btn btn-primary" onClick={this.saveItem}>Save Item</button>
         </form>
