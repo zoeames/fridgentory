@@ -1,0 +1,15 @@
+.ItemForm {
+  .dropdown {
+    width: 100%;
+    button {
+      width: 100%
+    }
+    .dropdown-menu {
+      width: 100%
+    }
+  }
+
+  .datepicker, .react-datepicker-wrapper, .react-datepicker__input-container {
+    width: 100%;
+  }
+}

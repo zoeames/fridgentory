@@ -6,8 +6,8 @@
     "categoryId": "category1",
     "primaryLocationId": "primaryLocation1",
     "secondaryLocationId": "secondaryLocation2",
-    "expirationDate": "9/20/2020",
-    "purchaseDate": "9/20/2019",
+    "expirationDate": "2020-07-29T16:44:28.000Z",
+    "purchaseDate": "2019-07-29T16:44:28.000Z",
     "quantity": 3,
     "unitId": "unit2",
     "notes": "nom1 nom2 nom3 nom4 nom5"
@@ -19,8 +19,8 @@
     "categoryId": "category15",
     "primaryLocationId": "primaryLocation7",
     "secondaryLocationId": "secondaryLocation14",
-    "expirationDate": "9/20/2022",
-    "purchaseDate": "7/03/2020",
+    "expirationDate": "2022-07-29T16:44:28.000Z",
+    "purchaseDate": "2019-07-29T16:44:28.000Z",
     "quantity": 6,
     "unitId": "unit4",
     "notes": "FAMILY SIZE"
@@ -32,8 +32,8 @@
     "categoryId": "category11",
     "primaryLocationId": "primaryLocation1",
     "secondaryLocationId": "secondaryLocation3",
-    "expirationDate": "9/20/2020",
-    "purchaseDate": "9/20/2019",
+    "expirationDate": "2025-07-29T16:44:28.000Z",
+    "purchaseDate": "2019-07-29T16:44:28.000Z",
     "quantity": 2,
     "unitId": "unit3",
     "notes": "from Sprouts"
