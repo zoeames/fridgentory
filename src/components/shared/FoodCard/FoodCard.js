@@ -5,7 +5,7 @@ import './FoodCard.scss';
 
 class FoodCard extends React.Component {
   render() {
-    const { item } = this.props;
+    const { item, deleteItem } = this.props;
 
     // ios requires onClick to be added for clickable things
     return (
@@ -13,7 +13,7 @@ class FoodCard extends React.Component {
         <div className="FoodCard">
           <div className="under-card">
             <div className="mod-buttons">
-              <button className="btn btn-outline-dark"><i className="fas fa-times-circle fa-2x"></i></button>
+              <button className="btn btn-outline-dark" onClick={() => deleteItem(item.id) }><i className="fas fa-times-circle fa-2x"></i></button>
               <button className="btn btn-outline-light btn-sm edit-btn"><i className="fal fa-pencil fa-2x"></i></button>
             </div>
             <div className="left-panel">
@@ -30,7 +30,7 @@ class FoodCard extends React.Component {
             </div>
             <div className="info-container">
               <div className="food-name">{item.name}</div>
-              <div className="notes"><strong>Notes: </strong>{item.notes}</div>
+              <div className="notes"><strong>Notes: </strong> {item.notes.length > 0 ? item.notes : 'none' }</div>
               <div className="info d-flex flex-wrap">
                 <div className="stat col-6">
                   <div className="title">Category</div>

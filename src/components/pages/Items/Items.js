@@ -6,21 +6,32 @@ import FoodCard from '../../shared/FoodCard/FoodCard';
 import smashData from '../../../helpers/data/smashData';
 
 import './Items.scss';
+import itemsData from '../../../helpers/data/itemsData';
 
 class Items extends React.Component {
   state = {
     items: [],
   }
 
-  componentDidMount() {
+  getCompleteItemList = () => {
     smashData.getCompleteItemList()
       .then((items) => this.setState({ items }))
       .catch((err) => console.error('unable to get items', err));
   }
 
+  componentDidMount() {
+    this.getCompleteItemList();
+  }
+
+  deleteItem = (itemId) => {
+    itemsData.deleteItem(itemId)
+      .then(() => this.getCompleteItemList())
+      .catch((err) => console.error('unable to delete item:', err));
+  }
+
   render() {
     const { items } = this.state;
-    const buildItemCards = items.map((item) => <FoodCard key={item.id} item={item}/>);
+    const buildItemCards = items.map((item) => <FoodCard key={item.id} item={item} deleteItem={this.deleteItem}/>);
 
     return (
       <div className="Items col-lg-10 offset-lg-1 text-center">

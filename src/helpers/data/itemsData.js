@@ -22,7 +22,10 @@ const getAllItems = () => new Promise((resolve, reject) => {
 
 const saveItem = (newItem) => axios.post(`${baseUrl}/items.json`, newItem);
 
+const deleteItem = (itemId) => axios.delete(`${baseUrl}/items/${itemId}.json`);
+
 export default {
   getAllItems,
   saveItem,
+  deleteItem,
 };
