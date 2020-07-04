@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 import './FoodCard.scss';
 
@@ -11,6 +12,10 @@ class FoodCard extends React.Component {
       <div className="col-12 col-md-6 col-lg-4" onClick={() => {}}>
         <div className="FoodCard">
           <div className="under-card">
+            <div className="mod-buttons">
+              <button className="btn btn-outline-dark"><i className="fas fa-times-circle fa-2x"></i></button>
+              <button className="btn btn-outline-light btn-sm edit-btn"><i className="fal fa-pencil fa-2x"></i></button>
+            </div>
             <div className="left-panel">
               <div className="pill top">
                 {item.primaryLocation}
@@ -19,6 +24,9 @@ class FoodCard extends React.Component {
               <div className="pill bottom">
                 {item.secondaryLocation}
               </div>
+            </div>
+            <div className="category-icon">
+              <i className={`${item.category.icon} fa-2x`}></i>
             </div>
             <div className="info-container">
               <div className="food-name">{item.name}</div>
@@ -37,12 +45,12 @@ class FoodCard extends React.Component {
                 <div className="stat col-6">
                   <div className="title">Purchased</div>
                   <i className="fas fa-clock"></i>
-                  <div className="value">{item.purchaseDate}</div>
+                  <div className="value">{moment(item.purchaseDate).format('L')}</div>
                 </div>
                 <div className="stat col-6">
                   <div className="title">Expires</div>
                   <i className="fas fa-alarm-clock"></i>
-                  <div className="value">{item.expirationDate}</div>
+                  <div className="value">{moment(item.expirationDate).format('L')}</div>
                 </div>
               </div>
             </div>

@@ -11,6 +11,26 @@
   position: relative;
   margin: 15px 0;
   cursor: pointer;
+
+  .mod-buttons{
+    position: absolute;
+    top: 0;
+    left: 0;
+    button {
+      border: none!important;
+    }
+    .edit-btn {
+      position: absolute;
+      left: 105px;
+    }
+  }
+
+  .category-icon{
+    position: absolute;
+    bottom: 0;
+    left: 61px;
+  }
+
   .food-name {
     text-align: center;
     font-size: 30px;
