@@ -1,8 +1,8 @@
 import React from 'react';
 
 import './Categories.scss';
-import categoriesData from '../../../helpers/data/categoriesData';
 import CategoryCard from '../../shared/CategoryCard/CategoryCard';
+import smashData from '../../../helpers/data/smashData';
 
 class Categories extends React.Component {
   state = {
@@ -10,7 +10,7 @@ class Categories extends React.Component {
   }
 
   getCategories = () => {
-    categoriesData.getAllCategories()
+    smashData.getAllCategoriesWithTotals()
       .then((categories) => this.setState({ categories }))
       .catch((err) => console.error('unable to get all categories: ', err));
   }

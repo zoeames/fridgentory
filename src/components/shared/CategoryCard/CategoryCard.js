@@ -15,7 +15,7 @@ class CategoryCard extends React.Component {
             <i className={`fa-5x ${category.icon}`}></i>
           </div>
           <div className="pill bottom">
-            {'1000 items'}
+            {category.totalItems} items
           </div>
         </div>
       </div>
