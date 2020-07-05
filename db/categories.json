@@ -66,5 +66,13 @@
   "category17": {
     "name": "Unknown",
     "icon": "fas fa-ufo"
+  },
+  "category18": {
+    "name": "Tea",
+    "icon": "fas fa-mug-tea"
+  },
+  "category19": {
+    "name": "Coffee",
+    "icon": "fas fa-coffee-pot"
   }
 }
