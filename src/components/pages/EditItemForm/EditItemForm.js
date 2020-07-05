@@ -158,6 +158,13 @@ class EditItemForm extends React.Component {
     this.setState({ itemPurchaseDate: date });
   }
 
+  itemPurchaseDateUnknownChange = (e) => {
+    e.preventDefault();
+    const { purchasedDatepicker } = this.refs;
+    purchasedDatepicker.setOpen(false);
+    this.itemPurchaseDateChange(new Date('1/1/1000'));
+  }
+
   itemExpirationDateChange = (date) => {
     this.setState({ itemExpirationDate: date });
   }
@@ -211,7 +218,10 @@ class EditItemForm extends React.Component {
                 selected={itemPurchaseDate}
                 onChange={this.itemPurchaseDateChange}
                 maxDate={moment().toDate()}
-              />
+                ref="purchasedDatepicker"
+              >
+                <button className="btn btn-danger btn-sm" onClick={this.itemPurchaseDateUnknownChange}>Unknown</button>
+              </DatePicker>
             </div>
             <div className="col-2">
               <label htmlFor="itemExpirationDate">Expiration Date</label>
